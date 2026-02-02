@@ -1,9 +1,9 @@
-import { Input } from 'antd'
 import React from 'react'
+import CourseInput from './CourseInput'
 
 const SearchBar = ({className, name, onChange, type, placeholder}: any) => {
   return (
-    <Input className={className} name={name} onChange={onChange} type={type} placeholder={placeholder} />
+    <CourseInput className={className} name={name} onChange={onChange} type={type} placeholder={placeholder} />
   )
 }
 

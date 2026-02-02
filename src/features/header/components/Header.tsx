@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { LookfinityLogoIcon } from '../../../assets'
 import SearchBar from '../../../components/common/SearchBar'
 import { Link, useLocation } from 'react-router-dom';
-import CourseAvatar from '../../../components/common/Avatar';
+import CourseAvatar from '../../../components/common/CourseAvatar';
 
 const {Header: AntHeader} = Layout;
 
@@ -20,6 +20,10 @@ const Header = () => {
       key: '/courses',
       label: <Link to="/courses">Courses</Link>,
     },
+    {
+      key: '/help',
+      label: <Link to="/help">Help</Link>,
+    },
   ]
 
   const handleSearchChange = (e: any) => {
@@ -30,7 +34,7 @@ const Header = () => {
     <AntHeader>
       <Flex justify='space-between'>
       <Space>
-        <Image src={LookfinityLogoIcon} alt="logo" style={{marginLeft: "10px"}} />
+        <Image src={LookfinityLogoIcon} alt="logo" />
         <SearchBar className='searchBar' name="search" onChange={handleSearchChange} type="text" placeholder="Search..." />
         
       </Space>
@@ -40,7 +44,7 @@ const Header = () => {
         mode="horizontal"
         selectedKeys={[location.pathname]}
         items={items}
-        style={{ flex: 1 }}
+        // style={{ flex: 1 }}
       />
       <CourseAvatar image={true} />
       </Space>
