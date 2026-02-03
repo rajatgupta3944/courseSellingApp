@@ -1,9 +1,10 @@
 import React from 'react';
 import { Card } from 'antd';
+import CourseButton from './CourseButton';
 
 const { Meta } = Card;
 
-const CourseCard: React.FC = ({title, description, price, image, instructor}: any) => {
+const CourseCard: React.FC = ({title, description, price, image, instructor, quantity, onClick}: any) => {
   console.log(image, 'img')
   return <Card
     hoverable
@@ -20,6 +21,7 @@ const CourseCard: React.FC = ({title, description, price, image, instructor}: an
     <div style={{ marginTop: 12 }}>
       <p><strong>Price:</strong> ${price}</p>
       <p><strong>Instructor:</strong> {instructor}</p>
+      {!quantity ? <CourseButton label="Add +" onClick={onClick} /> : quantity}
     </div>
   </Card>
 }

@@ -8,6 +8,7 @@ import Signup from "../features/auth/pages/Signup"
 import Home from "../features/Home/pages/Home";
 import Courses from "../features/courses/pages/Courses";
 import HelpForm from "../features/help/pages/HelpForm";
+import Cart from "../features/cart/pages/Cart";
 
 const AppRoutes = () => {
   return (
@@ -17,6 +18,7 @@ const AppRoutes = () => {
       <Route path="/signup" element={<Signup />} />
       <Route path="/courses" element={<Courses />} />
       <Route path="/help" element={<HelpForm />} />
+      <Route path="/cart" element={<Cart />} />
     </Routes>
   )
 }

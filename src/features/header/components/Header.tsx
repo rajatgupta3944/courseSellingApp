@@ -24,6 +24,10 @@ const Header = () => {
       key: '/help',
       label: <Link to="/help">Help</Link>,
     },
+    {
+      key: '/cart',
+      label: <Link to="/cart">Cart</Link>,
+    },
   ]
 
   const handleSearchChange = (e: any) => {
