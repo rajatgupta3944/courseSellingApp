@@ -17,7 +17,7 @@ const Home = () => {
         <Text className='color-gray txt-size-20 w-50 m-auto'>
           Master Full Stack Development through hands-on open source projects. Join a community of developers transforming their careers with practical, real-world programming skills.
         </Text>
-        <div className="flex-center m-20">
+        <div className="flex-center mt-20">
           <CourseButton label="Go to courses" type="primary" onClick={handleClick} />
         </div>
       </Flex>

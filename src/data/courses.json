@@ -1,0 +1,76 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "title": "Introduction to React",
+      "description": "Learn the basics of React, including components, state, and props.",
+      "price": 49.99,
+      "image": "https://images.pexels.com/photos/270404/pexels-photo-270404.jpeg",
+      "instructor": "Jane Doe"
+    },
+    {
+      "id": 2,
+      "title": "Advanced JavaScript",
+      "description": "Deep dive into advanced JavaScript concepts and techniques.",
+      "price": 59.99,
+      "image": "https://images.pexels.com/photos/270404/pexels-photo-270404.jpeg",
+      "instructor": "John Smith"
+    },
+    {
+      "id": 3,
+      "title": "Web Development Fundamentals",
+      "description": "Learn the fundamentals of web development including HTML, CSS, and JavaScript.",
+      "image": "https://images.pexels.com/photos/270404/pexels-photo-270404.jpeg",
+      "price": 69.99,
+      "instructor": "Alice Johnson"
+    },
+    {
+      "id": 4,
+      "title": "Data Structures and Algorithms",
+      "description": "Learn essential data structures and algorithms for coding interviews.",
+      "image": "https://images.pexels.com/photos/270404/pexels-photo-270404.jpeg",
+      "price": 79.99,
+      "instructor": "Bob Williams"
+    },
+    {
+      "id": 5,
+      "title": "Data Structures and Algorithms",
+      "description": "Learn essential data structures and algorithms for coding interviews.",
+      "image": "https://images.pexels.com/photos/270404/pexels-photo-270404.jpeg",
+      "price": 79.99,
+      "instructor": "Bob Williams"
+    },
+    {
+      "id": 6,
+      "title": "Data Structures and Algorithms",
+      "description": "Learn essential data structures and algorithms for coding interviews.",
+      "image": "https://images.pexels.com/photos/270404/pexels-photo-270404.jpeg",
+      "price": 79.99,
+      "instructor": "Bob Williams"
+    },
+    {
+      "id": 7,
+      "title": "Data Structures and Algorithms",
+      "description": "Learn essential data structures and algorithms for coding interviews.",
+      "image": "https://images.pexels.com/photos/270404/pexels-photo-270404.jpeg",
+      "price": 79.99,
+      "instructor": "Bob Williams"
+    },
+    {
+      "id": 8,
+      "title": "Data Structures and Algorithms",
+      "description": "Learn essential data structures and algorithms for coding interviews.",
+      "image": "https://images.pexels.com/photos/270404/pexels-photo-270404.jpeg",
+      "price": 79.99,
+      "instructor": "Bob Williams"
+    },
+    {
+      "id": 9,
+      "title": "Data Structures and Algorithms",
+      "description": "Learn essential data structures and algorithms for coding interviews.",
+      "image": "https://images.pexels.com/photos/270404/pexels-photo-270404.jpeg",
+      "price": 79.99,
+      "instructor": "Bob Williams"
+    }
+  ]
+}
