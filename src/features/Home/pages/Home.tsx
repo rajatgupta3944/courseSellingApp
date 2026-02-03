@@ -1,4 +1,4 @@
-import { Button, Flex, Image, Typography } from 'antd'
+import { Flex, Image, Typography } from 'antd'
 import React from 'react'
 import { coursesPhoto } from '../../../assets'
 import CourseButton from '../../../components/common/CourseButton'

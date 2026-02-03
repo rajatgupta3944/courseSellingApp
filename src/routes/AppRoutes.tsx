@@ -2,7 +2,6 @@ import {Routes, Route, Navigate} from "react-router-dom";
 
 import React from 'react'
 
-//Auth Pages
 import Login from "../features/auth/pages/Login";
 import Signup from "../features/auth/pages/Signup"
 import Home from "../features/Home/pages/Home";

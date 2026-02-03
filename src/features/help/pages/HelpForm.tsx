@@ -6,7 +6,6 @@ import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
 import { Flex, Space, Typography } from 'antd'
 import CourseButton from '../../../components/common/CourseButton'
-import TextArea from 'antd/es/input/TextArea'
 
 type FormValues = {
   name: string
