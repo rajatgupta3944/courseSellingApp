@@ -14,32 +14,42 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import CourseAvatar from "../../../components/common/CourseAvatar";
 import Profile from "../../profile/Profile";
 import CourseButton from "../../../components/common/CourseButton";
+import { useAuth } from "react-oidc-context";
+import LoginButton from "../../auth/pages/LoginButton";
+import SignupButton from "../../auth/pages/SignupButton";
+import LogoutButton from "../../auth/pages/LogoutButton";
 
 const { Header: AntHeader } = Layout;
 
 const Header = () => {
   const [search, setSearch] = useState("");
   const location = useLocation();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const auth = useAuth();
+  console.log(auth, 'auth')
 
   const items: MenuProps["items"] = [
-    {
-      key: "/",
-      label: <Link to="/">Home</Link>,
-    },
-    {
-      key: "/courses",
-      label: <Link to="/courses">Courses</Link>,
-    },
-    {
-      key: "/help",
-      label: <Link to="/help">Help</Link>,
-    },
-    {
-      key: "/cart",
-      label: <Link to="/cart">Cart</Link>,
-    },
-  ];
+  {
+    key: "/",
+    label: <Link to="/">Home</Link>,
+  },
+  {
+    key: "/courses",
+    label: <Link to="/courses">Courses</Link>,
+  },
+  {
+    key: "/help",
+    label: <Link to="/help">Help</Link>,
+  },
+  ...(auth.isAuthenticated
+    ? [
+        {
+          key: "/cart",
+          label: <Link to="/cart">Cart</Link>,
+        },
+      ]
+    : []),
+];
 
   const handleSearchChange = (e: any) => {
     setSearch(e.target.value);
@@ -49,24 +59,30 @@ const Header = () => {
     <AntHeader style={{ overflow: "visible" }}>
       <Flex justify="space-between">
         <Space>
-          <Image src={LookfinityLogoIcon} alt="logo" />
-          <SearchBar
+          <Image src={LookfinityLogoIcon} alt="logo" preview={false} />
+          {/* <SearchBar
             className="searchBar"
             name="search"
             onChange={handleSearchChange}
             type="text"
             placeholder="Search..."
-          />
+          /> */}
         </Space>
         <Space>
-          <CourseButton label="Sign Up" onClick={() => navigate("/signup")} />
-          <CourseButton label="Login" onClick={() => navigate("/login")} />
+    {!auth.isAuthenticated ? (
+    <>
+      <SignupButton />
+      <LoginButton />
+    </>
+  ) : (
+    <LogoutButton />
+  )}
+
           <Menu
             theme="dark"
             mode="horizontal"
             selectedKeys={[location.pathname]}
             items={items}
-            // style={{ flex: 1 }}
           />
 
           <Popover

@@ -3,18 +3,22 @@ import { UserOutlined, LogoutOutlined, SettingOutlined, CodeOutlined } from '@an
 import CourseAvatar from '../../components/common/CourseAvatar';
 import CourseButton from '../../components/common/CourseButton';
 import UserData from '../../data/userData.json';
+import LoginButton from '../auth/pages/LoginButton';
+import { useAuth } from 'react-oidc-context';
+import LogoutButton from '../auth/pages/LogoutButton';
  
 const Profile = () => {
   const { Text } = Typography;
+  const auth = useAuth();
 
   return (
     <Card style={{ width: 260, borderRadius: 12 }}>
       <Flex align="center" gap={12}>
         <CourseAvatar src={UserData?.image} name="Rajat" />
         <Flex vertical>
-          <Text strong>{UserData?.name}</Text>
+          {/* <Text strong>{UserData?.name}</Text> */}
           <Text type="secondary" style={{ fontSize: 12 }}>
-            {UserData?.email}
+            {auth?.user?.profile?.email || "Agent"}
           </Text>
         </Flex>
       </Flex>
@@ -22,9 +26,11 @@ const Profile = () => {
       <Divider />
 
       <Flex vertical gap={8}>
-        <CourseButton type="text" label="My Courses" icon={<CodeOutlined />} block />
+        {auth.isAuthenticated ? <CourseButton type="text" label="My Courses" icon={<CodeOutlined />} block /> : <CourseButton label="Enroll!!" />}
         <CourseButton type="text" label="Settings" icon={<SettingOutlined />} block />
-        <CourseButton type="text" label="Logout" danger icon={<LogoutOutlined />} block />
+        {!auth.isAuthenticated ? <LoginButton /> :
+        <LogoutButton />
+    }
       </Flex>
     </Card>
   )
